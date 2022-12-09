@@ -1,0 +1,8 @@
+BLoC (Business Logic Component) pattern is implemented by having
+
+One or several BLoC classes which:
+contain data (or communicate with models which in turn contain data) and
+set up streams for continuous data delivery, especially when the data changes.
+These streams receive data from sinks: Sink => Stream. Sinks are kept in sync with the current data object.
+Widgets subscribe to the BLoCs using StreamBuilders. The widget becomes a child of the StreamBuilder. The StreamBuilder rebuilds the widget when the BLoC’s data changes (i.e., the stream receives new data).
+In a nutshell, we deal with BLoC classes (sinks and streams) and StreamBuilders.
